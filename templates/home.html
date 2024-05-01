@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Scrapping</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <style> 
+    body {
+      background-color: #f0e6f6; /* light purple background color */
+      text-align: left;
+    }
+    .container {
+      margin-left: 10px; /* Adjust the container to the left */
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark">
+  <ul class="nav nav-pills">
+    <li class="nav-item "> <a class="nav-link"><b>WEB-SCRAPPING</b></a> </li>
+    <form method="POST" action="/">
+      {%csrf_token%}
+      <input class="search" type="text" name="page" placeholder="Search (links only)" aria-label="Search">
+      <button type="submit" class="btn btn-success">Go</button>
+      <button type="submit" class="btn btn-warning">Clear</button>
+    </form>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1>Scrapping</h1>
+  <table class="table table-dark table-striped">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in data %}
+      <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.sname }}</td>
+        <td>{{ i.address }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+</html>
