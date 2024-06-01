@@ -1,7 +1,9 @@
-Web Scraping Project (using python,django,html,css,bootstrap)
+# Web Scraping Project (using python,django,html,css,bootstrap)
 
 This project utilizes Python's web scraping libraries like BeautifulSoup and requests to extract information from web pages. 
 The main objective is to collect data from various websites, process it, and store it in a structured format for further analysis or presentation.
+
+![screenshot](screenshot/scrap.png)
 
 Key Features:
 
